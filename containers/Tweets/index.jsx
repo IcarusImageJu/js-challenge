@@ -1,9 +1,12 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, ScrollView } from 'react-native';
+import Title from '../../components/Title';
 
 function Tweets() {
 	return(
-		<Text>This is tweet page</Text>
+		<ScrollView>
+			<Title title="Political News" />
+		</ScrollView>
 	);
 }
 
