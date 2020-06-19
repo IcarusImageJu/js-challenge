@@ -18,6 +18,7 @@ const appReducer = (state = initialState, action) => produce(state, (draft) => {
 		case TWEETS_LOAD_SUCCESS:
 			draft.loading = false;
 			draft.error = true;
+			draft.tweets = action.tweets;
 			break;
 		case TWEETS_LOAD_FAIL:
 			draft.loading = false;

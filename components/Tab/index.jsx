@@ -2,17 +2,17 @@ import React from 'react';
 import {
 	Image, Text, View, TouchableOpacity,
 } from 'react-native';
-import { Link, useLocation } from '../../services/router';
+import { useHistory, useLocation } from '../../services/router';
 import styles from './styles';
 
 function Tab({ person }) {
 	const location = useLocation();
+	const history = useHistory();
 	const isActive = location?.pathname === `/${person?.tag}`;
 
 	return (
-		<Link
-			to={person?.tag ?? '/'}
-			component={TouchableOpacity}
+		<TouchableOpacity
+			onPress={() => history.push(person.tag)}
 		>
 			<View
 				style={[styles.link, isActive && styles.activeLink]}
@@ -26,7 +26,7 @@ function Tab({ person }) {
 					<Text style={[styles.tag, isActive && styles.textActive]}>{person?.tag ?? ''}</Text>
 				</View>
 			</View>
-		</Link>
+		</TouchableOpacity>
 	);
 }
 

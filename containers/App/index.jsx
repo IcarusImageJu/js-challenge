@@ -20,8 +20,9 @@ function App({ persons }) {
 				style={Platform.OS === 'web' ? styles.containerWeb : styles.container}
 				contentContainerStyle={styles.innerContainer}
 			>
-				<Title title="News" />
+				<Title title="Your news from" />
 				<Nav persons={persons} />
+				<Title sub title="Directly on this feed" />
 				<Switch>
 					<Route exact path="/:tag" component={Tweets} />
 					{/* fallback for when there's no tab selected */}

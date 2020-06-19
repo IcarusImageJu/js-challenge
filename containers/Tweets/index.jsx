@@ -1,5 +1,5 @@
 import React, { useEffect, memo } from 'react';
-import { Text } from 'react-native';
+import { FlatList, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
@@ -11,6 +11,8 @@ import { makeSelectTweets } from './selectors';
 import { makeSelectPersons } from '../App/selectors';
 import { useParams, useHistory, useLocation } from '../../services/router';
 import { loadTweets } from './actions';
+import Tweet from '../../components/Tweet';
+import styles from './styles';
 
 const key = 'tweets';
 
@@ -23,17 +25,23 @@ function Tweets({ tweets, persons, handleLoadTweets }) {
 	const location = useLocation();
 
 	useEffect(() => {
-		console.log(tag);
-
 		if (tag) {
 			handleLoadTweets(tag);
 		} else {
+			// load first person if there's none
 			history.push(`/${persons[0].tag}`);
 		}
 	}, [tag, location]);
 
+	if (tweets.loading) {
+		return <Text style={styles.loading}>Loading your daily dose of tweets...</Text>;
+	}
+
 	return (
-		<Text>Tweet page</Text>
+		<FlatList
+			data={tweets.tweets}
+			renderItem={({ item }) => <Tweet tweet={item} />}
+		/>
 	);
 }
 

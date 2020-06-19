@@ -9,4 +9,9 @@ export default EStyleSheet.create({
 		letterSpacing: -3,
 		marginBottom: '1rem',
 	},
+	subTitle: {
+		fontSize: 32,
+		letterSpacing: -2,
+		lineHeight: 40,
+	},
 });
