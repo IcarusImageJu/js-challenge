@@ -5,10 +5,15 @@ export default EStyleSheet.create({
 		flex: 1,
 		backgroundColor: 'white',
 		position: 'relative',
+		paddingHorizontal: '1rem',
 	},
 	containerWeb: {
 		maxWidth: '900px',
 		width: '100%',
 		margin: 'auto',
+		paddingHorizontal: '1rem',
+	},
+	innerContainer: {
+		paddingVertical: '2rem',
 	},
 });

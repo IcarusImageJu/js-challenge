@@ -17,8 +17,14 @@ const makeSelectError = () => createSelector(
 	(globalState) => globalState.error,
 );
 
+const makeSelectPersons = () => createSelector(
+	selectGlobal,
+	(globalState) => globalState.persons,
+);
+
 export {
 	selectGlobal,
 	makeSelectLoading,
 	makeSelectError,
+	makeSelectPersons,
 };
