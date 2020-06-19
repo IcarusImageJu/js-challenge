@@ -23,7 +23,9 @@ function App({ persons }) {
 				<Title title="News" />
 				<Nav persons={persons} />
 				<Switch>
-					<Route path="/" component={Tweets} />
+					<Route exact path="/:tag" component={Tweets} />
+					{/* fallback for when there's no tab selected */}
+					<Route component={Tweets} />
 				</Switch>
 			</ScrollView>
 		</Router>

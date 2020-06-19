@@ -16,11 +16,11 @@ export const initialState = {
 	loading: true,
 	error: false,
 	persons: [{
-		tag: '@potus',
+		tag: 'realDonaldTrump',
 		name: 'Donald Trump',
 		avatar: 'https://leseco.ma/wp-content/uploads/2020/01/TRUMPleseco.jpg',
 	}, {
-		tag: '@hilary',
+		tag: 'hilary',
 		name: 'Hillary Clinton',
 		avatar: 'https://www.biography.com/.image/c_fit%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_620/MTE4MDAzNDEwMDU4NTc3NDIy/hillary-clinton-9251306-2-402.jpg',
 	}],

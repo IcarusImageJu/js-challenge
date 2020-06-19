@@ -37,7 +37,6 @@ export default EStyleSheet.create({
 	},
 	content: {
 		padding: '.5rem',
-		flex: 1,
 		alignItems: 'flex-start',
 		justifyContent: 'space-between',
 	},

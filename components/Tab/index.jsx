@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-	Image, Text, View,
+	Image, Text, View, TouchableOpacity,
 } from 'react-native';
 import { Link, useLocation } from '../../services/router';
 import styles from './styles';
@@ -12,6 +12,7 @@ function Tab({ person }) {
 	return (
 		<Link
 			to={person?.tag ?? '/'}
+			component={TouchableOpacity}
 		>
 			<View
 				style={[styles.link, isActive && styles.activeLink]}

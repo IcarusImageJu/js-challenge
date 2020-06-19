@@ -14,6 +14,6 @@ export default EStyleSheet.create({
 		paddingHorizontal: '1rem',
 	},
 	innerContainer: {
-		paddingVertical: '2rem',
+		paddingVertical: '3rem',
 	},
 });
